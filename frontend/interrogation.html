@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interrogation Page - Connect Sphere</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg,
+        #fff7a0 0%,
+        #ffdb4d 25%,
+        #ffccd5 50%,
+        #ffb088 75%,
+        #ffa54f 100%
+      );
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .figure {
+      width: 60px;
+      height: 60px;
+      background: #ddd;
+      border-radius: 50%;
+      margin: 1rem auto;
+    }
+    .question {
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+    .options {
+      margin-bottom: 1rem;
+    }
+    .options label {
+      display: inline-block;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      box-sizing: border-box;
+    }
+    .option-group {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
+    .option-group-title {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Interrogation Page</h2>
+    <div style="text-align:center;">
+      <div class="figure"></div>
+      <p>(Person with questions)</p>
+    </div>
+
+    <div class="question">1. What is the first thing you see in a person?</div>
+    <div class="options">
+      <label><input type="checkbox" /> way of speaking</label>
+      <label><input type="checkbox" /> laughing</label>
+      <label><input type="checkbox" /> behaviour</label>
+      <label><input type="checkbox" /> others</label>
+    </div>
+
+    <div class="question">2. Are you!!!</div>
+    
+    <div class="option-group">
+      <div class="option-group-title">Choose your active time:</div>
+      <div class="options">
+        <label><input type="radio" name="active-time"> morning person</label>
+        <label><input type="radio" name="active-time"> night owl</label>
+      </div>
+    </div>
+
+    <div class="option-group">
+      <div class="option-group-title">Choose your personality type:</div>
+      <div class="options">
+        <label><input type="radio" name="personality-type"> introvert</label>
+        <label><input type="radio" name="personality-type"> extrovert</label>
+        <label><input type="radio" name="personality-type"> ambivert</label>
+      </div>
+    </div>
+
+    <div class="option-group">
+      <div class="option-group-title">Reading habits:</div>
+      <div class="options">
+        <label><input type="radio" name="reading-habit"> bookworm</label>
+        <label><input type="radio" name="reading-habit"> non-bookworm</label>
+      </div>
+    </div>
+
+    <div class="option-group">
+      <div class="option-group-title">Food preferences:</div>
+      <div class="options">
+        <label><input type="radio" name="food-preference"> foodie</label>
+        <label><input type="radio" name="food-preference"> non foodie</label>
+      </div>
+    </div>
+
+    <div class="option-group">
+      <div class="option-group-title">Interest preference:</div>
+      <div class="options">
+        <label><input type="radio" name="interest"> interested in sports</label>
+        <label><input type="radio" name="interest"> interested in games</label>
+      </div>
+    </div>
+
+    <div class="question">3. If interested in sports/games enter the name.</div>
+    <input type="text" placeholder="Your favorite sport/game..." />
+
+    <div class="question">4. Enter your average screen time of your all electrical gadgets</div>
+    <input type="text" placeholder="E.g. 5 hours a day" />
+
+    <div class="question">5. Do you like binging?</div>
+    <div class="option-group">
+        <div class="options">
+            <label><input type="radio" name="binging"> Yes</label>
+            <label><input type="radio" name="binging"> No</label>
+        </div>
+    </div>
+
+    <div class="question">6. What is the most used app?</div>
+    <input type="text" placeholder="We guess mostly you use instagram" />
+
+    <div class="question">7. What do you do when you face a problem?</div>
+    <div class="option-group">
+        <div class="options">
+            <label><input type="radio" name="problem-solving"> First cry and fight against it</label>
+            <label><input type="radio" name="problem-solving"> Be brave and fight against it</label>
+        </div>
+    </div>
+
+    <div style="
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    ">
+        <h3 style="color: #a33ac4; margin-bottom: 1rem;">Heyy!! Do you want to stop this boring interrogation or want to continue?</h3>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <button style="
+                padding: 0.8rem;
+                border: none;
+                border-radius: 25px;
+                background: #54ecf7;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            "class="option-btn"onclick="window.location.href='wishlistpage.html'">Stop interrogation, Start asking about my future friend qualification</button>
+            
+            <button style="
+                padding: 0.8rem;
+                border: none;
+                border-radius: 25px;
+                background: #54ecf7;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            ">No, I want to be more specific about myself, continue</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

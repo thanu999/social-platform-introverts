@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Page - Connect Sphere</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg,
+                #fff7a0 0%,
+                #ffdb4d 25%,
+                #ffccd5 50%,
+                #ffb088 75%,
+                #ffa54f 100%
+            );
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #a33ac4;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .figure {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .figure .circle {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .speech-bubble {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+            display: none;
+        }
+
+        .speech-bubble.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .speech-bubble p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .interrogate-btn {
+            display: block;
+            margin: 2rem auto;
+            background: #a33ac4;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(163, 58, 196, 0.3);
+        }
+
+        .interrogate-btn:hover {
+            background: #fa54fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(250, 84, 250, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Let's start interrogation!!</h2>
+        
+        <div class="figure">
+            <div class="circle"></div>
+        </div>
+        
+        <div class="speech-bubble" data-message="1">
+            <p>Before meeting your friends can we have a quick chat about Yourself</p>
+        </div>
+        <div class="speech-bubble" data-message="2">
+            <p>This make you to connect with People who is mostly a replica of you.</p>
+        </div>
+        <div class="speech-bubble" data-message="3">
+            <p>Ok!! let's start our interrogation! Feel free to answer, I am not your teacher!</p>
+        </div>
+
+        <button class="interrogate-btn" onclick="showNextMessage()">Ok!!</button>
+    </div>
+
+    <script>
+        let currentMessage = 0;
+        const messages = document.querySelectorAll('.speech-bubble');
+        const button = document.querySelector('.interrogate-btn');
+
+        function showNextMessage() {
+            if (currentMessage < messages.length) {
+                // Hide all messages
+                messages.forEach(msg => {
+                    msg.classList.remove('active');
+                });
+                
+                // Show current message
+                messages[currentMessage].classList.add('active');
+                
+                currentMessage++;
+
+                // Change button text for last message
+                if (currentMessage === messages.length) {
+                    button.textContent = "Interrogate me!!";
+                } else {
+                    button.textContent = "Ok!!";
+                }
+            } else {
+                // Reset to first message
+                currentMessage = 0;
+                button.textContent = "Ok!!";
+                showNextMessage();
+            }
+        }
+
+        // Show first message on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            showNextMessage();
+        });
+    </script>
+</body>
+</html> 

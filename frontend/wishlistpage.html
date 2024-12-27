@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish List - Connect Sphere</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,
+                #fff7a0 0%,
+                #ffdb4d 25%,
+                #ffccd5 50%,
+                #ffb088 75%,
+                #ffa54f 100%
+            );
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #a33ac4;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .wish-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .wish-box h3 {
+            color: #a33ac4;
+            margin-bottom: 1rem;
+        }
+
+        .option-group {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .option-group-title {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .options {
+            margin-bottom: 1rem;
+        }
+
+        .options label {
+            display: inline-block;
+            margin-right: 1rem;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f8f8f8;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .options label:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .search-btn {
+            display: block;
+            width: 200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #54ecf7;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(84, 236, 247, 0.3);
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(84, 236, 247, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hey buddy!! Now It's the most beautiful segment that happens only in dreams.</h2>
+        
+        <div class="wish-box">
+            <h3>What Qualities you would like to have in your friend?</h3>
+
+            <div class="option-group">
+                <div class="option-group-title">Personality Type:</div>
+                <div class="options">
+                    <label><input type="radio" name="personality"> Extrovert</label>
+                    <label><input type="radio" name="personality"> Introvert</label>
+                    <label><input type="radio" name="personality"> Ambivert</label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <div class="option-group-title">Food Preference:</div>
+                <div class="options">
+                    <label><input type="radio" name="food"> Foodie</label>
+                    <label><input type="radio" name="food"> Friend who knows cooking</label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <div class="option-group-title">Interest:</div>
+                <div class="options">
+                    <label><input type="radio" name="interest"> Sports friend</label>
+                    <label><input type="radio" name="interest"> Gamer</label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <div class="option-group-title">Reading Habits:</div>
+                <div class="options">
+                    <label><input type="radio" name="reading"> Need a bookworm</label>
+                    <label><input type="radio" name="reading"> No, Not at all a bookworm</label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <div class="option-group-title">Active Time:</div>
+                <div class="options">
+                    <label><input type="radio" name="active-time"> Should be night owl</label>
+                    <label><input type="radio" name="active-time"> Should be a morning Yoga person</label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <div class="option-group-title">Social Media:</div>
+                <div class="options">
+                    <label><input type="radio" name="social"> Want a person who is active on social media</label>
+                    <label><input type="radio" name="social"> Please no!!, I need a person without even an instagram</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="search-btn"onclick="window.location.href='friendhunting-1.html'">Start Searching!!</button>
+    </div>
+</body>
+</html>

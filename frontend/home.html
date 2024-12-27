@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Sphere</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg,
+                #fff7a0 0%,    /* lighter yellow */
+                #ffdb4d 25%,   /* medium yellow */
+                #ffccd5 50%,   /* light pink */
+                #ffb088 75%,   /* peach */
+                #ffa54f 100%   /* light orange */
+            );
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #a33ac4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem auto;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .figure {
+            width: 120px;
+            text-align: center;
+            margin-right: 2rem;
+            position: relative;
+        }
+
+        .figure .anime-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .figure .anime-avatar:hover {
+            transform: scale(1.1);
+        }
+
+        .speech-bubble {
+            background: #ffa54f;
+            padding: 1rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+            display: none;
+        }
+
+        .speech-bubble.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .speech-bubble::after {
+            display: none;
+        }
+
+        .bubbles {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .bubbles p {
+            margin: 0;
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .make-friend-btn {
+            display: block;
+            margin: 2rem auto;
+            background: rgb(163, 58, 196);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(163, 58, 196, 0.3);
+        }
+
+        .make-friend-btn:hover {
+            background: #fa54fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(250, 84, 250, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .figure {
+                margin-bottom: 2rem;
+            }
+
+            .speech-bubble::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Connect Sphere!</h1>
+    </header>
+
+    <div class="content">
+        <div class="figure">
+            <div class="anime-avatar">
+                
+                <img src="girlpic.jpg">
+            </div>
+            
+        </div>
+
+        <div class="bubbles">
+            <div class="speech-bubble" data-message="1">
+                <p>Hey buddy!! Are you feeling lonely?</p>
+            </div>
+            <div class="speech-bubble" data-message="2">
+                <p>Want to make friends or connect with people?</p>
+            </div>
+            <div class="speech-bubble" data-message="3">
+                <p>Let's find someone who shares your interests!</p>
+            </div>
+            <div class="speech-bubble" data-message="4">
+                <p>Click the button below to start connecting!</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="make-friend-btn"onclick="showNextMessage()">Yes!!</button>
+    
+
+    <script>
+        let currentMessage = 0;
+        const messages = document.querySelectorAll('.speech-bubble');
+
+        function showNextMessage() {
+            if (currentMessage < messages.length) {
+                // Hide all messages
+                messages.forEach(msg => {
+                    msg.classList.remove('active');
+                });
+                
+                // Show current message
+                messages[currentMessage].classList.add('active');
+                
+                currentMessage++;
+
+                // Change button text for last message
+                if (currentMessage === messages.length) {
+                    document.querySelector('.make-friend-btn').textContent = 'Make a friend';
+                    window.location.href='loginpage.html';
+
+                } else {
+                    document.querySelector('.make-friend-btn').textContent = 'Yes!!';
+                }
+            } 
+        }
+
+        // Show first message on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            showNextMessage();
+        });
+    </script>
+    
+</body>
+</html>
